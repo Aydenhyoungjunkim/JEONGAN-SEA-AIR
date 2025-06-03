@@ -44,7 +44,7 @@
       color: #0070f3;
     }
     .hero {
-      background: url('https://picsum.photos/id/1050/1600/900') center/cover no-repeat;
+      background: url('https://picsum.photos/id/1011/1600/900') center/cover no-repeat;
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -56,12 +56,12 @@
     }
     .hero h1 {
       font-size: 3rem;
-      animation: fadeInUp 1s ease-out;
+      animation: fadeInUp 2s ease-out;
     }
     .hero p {
       font-size: 1.2rem;
       margin-top: 1rem;
-      animation: fadeInUp 1.4s ease-out;
+      animation: fadeInUp 2.8s ease-out;
     }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
@@ -203,6 +203,28 @@
     <p>팩스: 02-837-2314</p>
   </section>
 
+  <section id="realtime">
+    <h2>실시간 정보</h2>
+    <div class="grid">
+      <div class="service-card">
+        <i class="fas fa-dollar-sign"></i>
+        <p><strong>USD/KRW 환율:</strong> <span id="exchangeRate">Loading...</span></p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-clock"></i>
+        <p><strong>뉴욕 시간:</strong> <span id="nyTime">--:--</span></p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-clock"></i>
+        <p><strong>런던 시간:</strong> <span id="ldnTime">--:--</span></p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-clock"></i>
+        <p><strong>서울 시간:</strong> <span id="krTime">--:--</span></p>
+      </div>
+    </div>
+  </section>
+
   <section id="location">
     <h2>위치</h2>
     <p>서울 금천구 가산디지털2로 14, 213호</p>
@@ -216,5 +238,24 @@
   gsap.from(".hero h1", { y: 50, opacity: 0, duration: 1, ease: "power3.out" });
   gsap.from(".hero p", { y: 50, opacity: 0, delay: 0.3, duration: 1, ease: "power3.out" });
 </script>
+<script>
+  // 환율 정보
+  fetch('https://api.exchangerate.host/latest?base=USD&symbols=KRW')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById("exchangeRate").textContent = data.rates.KRW.toFixed(2) + ' KRW';
+    });
+
+  // 세계 시간 업데이트
+  function updateTime() {
+    const now = new Date();
+    document.getElementById('nyTime').textContent = new Date(now.toLocaleString("en-US", { timeZone: "America/New_York" })).toLocaleTimeString();
+    document.getElementById('ldnTime').textContent = new Date(now.toLocaleString("en-GB", { timeZone: "Europe/London" })).toLocaleTimeString();
+    document.getElementById('krTime').textContent = new Date(now.toLocaleString("ko-KR", { timeZone: "Asia/Seoul" })).toLocaleTimeString();
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+</script>
 </body>
 </html>
+
