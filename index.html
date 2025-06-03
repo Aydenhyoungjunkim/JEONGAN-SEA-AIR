@@ -55,14 +55,32 @@
       font-size: 1rem;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1557683304-673a23048d34?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
       position: relative;
+      height: 60vh;
+      overflow: hidden;
+    }
+
+    .hero video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      object-fit: cover;
+      opacity: 0.7;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #ffffff;
+      text-align: center;
     }
     .hero::before {
       content: '';
@@ -123,7 +141,10 @@
   </nav>
 
   <div class="hero">
-    <h1>고객 중심의 스마트 물류 파트너</h1>
+    <video autoplay muted loop playsinline>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-cargo-containers-on-a-ship-1227-large.mp4" type="video/mp4">
+    </video>
+    <h1>$1</h1>
   </div>
 
   <section id="about">
@@ -145,12 +166,17 @@
 
   <section id="clients">
     <h2>고객사</h2>
-    <ul>
-      <li>대형 제조기업</li>
-      <li>글로벌 유통사</li>
-      <li>IT 및 전자기업</li>
-      <li>중소 수출입업체</li>
-    </ul>
+    <div style="display: flex; gap: 2rem; align-items: center; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2d/CJ_Logistics_logo.svg" alt="CJ로고" style="width: 100px; height: auto;"/>
+        <p>CJ</p>
+      </div>
+      <div style="text-align: center;">
+        <img src="https://www.samhae.com/kor/img/common/logo.png" alt="삼해상사 로고" style="width: 100px; height: auto; background: white; padding: 0.5rem;"/>
+        <p>삼해상사</p>
+      </div>
+    </div>
+    <ul>$1</ul>
   </section>
 
   <section id="contact">
