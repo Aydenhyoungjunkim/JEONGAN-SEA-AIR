@@ -198,12 +198,18 @@
 
   <section id="contact">
     <h2>문의하기</h2>
-    <p>이메일: <a href="mailto:jpkim@jeongansna.com">jpkim@jeongansna.com</a></p>
+    <form action="https://formspree.io/f/xdoqpbko" method="POST" onsubmit="return showThankYouMessage(event)"
+      <input type="text" name="name" placeholder="이름" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+      <input type="email" name="email" placeholder="이메일 주소" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
+      <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="5" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
+      <button type="submit" style="padding: 0.8rem; background-color: #0070f3; color: white; border: none; border-radius: 5px; cursor: pointer;">메시지 보내기</button>
+    </form>
+    <p style="margin-top: 2rem;">이메일: <a href="mailto:tohyoungjun@icloud.com">tohyoungjun@icloud.com</a></p>
     <p>전화: <a href="tel:028372311">02-837-2311</a></p>
     <p>팩스: 02-837-2314</p>
-  </section>
-
-  <section id="realtime">
+  <p id="thankYouMessage" style="color: green; font-weight: bold; margin-top: 1rem; display: none;">메시지가 성공적으로 전송되었습니다. 감사합니다!</p>
+</section>
+<section id="realtime">
     <h2>실시간 정보</h2>
     <div class="grid">
       <div class="service-card">
@@ -240,10 +246,13 @@
 </script>
 <script>
   // 환율 정보
-  fetch('https://api.exchangerate.host/latest?base=USD&symbols=KRW')
+  fetch('https://v6.exchangerate-api.com/v6/0a5df2eb03dcf7e96fbd6353/latest/USD')
     .then(response => response.json())
     .then(data => {
-      document.getElementById("exchangeRate").textContent = data.rates.KRW.toFixed(2) + ' KRW';
+      const rate = data.conversion_rates.KRW;
+      document.getElementById("exchangeRate").textContent = rate.toFixed(2) + ' KRW';
+    }).catch(() => {
+      document.getElementById("exchangeRate").textContent = '정보를 불러올 수 없습니다';
     });
 
   // 세계 시간 업데이트
@@ -256,6 +265,28 @@
   updateTime();
   setInterval(updateTime, 1000);
 </script>
+<script>
+function showThankYouMessage(event) {
+  event.preventDefault();
+  const form = event.target;
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form),
+    headers: {
+      'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      document.getElementById("thankYouMessage").style.display = "block";
+      form.reset();
+    } else {
+      alert("메시지 전송에 실패했습니다. 다시 시도해주세요.");
+    }
+  }).catch(error => {
+    alert("네트워크 오류가 발생했습니다.");
+  });
+  return false;
+}
+</script>
 </body>
 </html>
-
