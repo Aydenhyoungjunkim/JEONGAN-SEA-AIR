@@ -44,7 +44,7 @@
       color: #0070f3;
     }
     .hero {
-      background: url('https://picsum.photos/id/1011/1600/900') center/cover no-repeat;
+      background: url('https://picsum.photos/id/1015/1600/900') center/cover no-repeat;
       height: 90vh;
       display: flex;
       justify-content: center;
@@ -198,7 +198,7 @@
 
   <section id="contact">
     <h2>문의하기</h2>
-    <form action="https://formspree.io/f/xdoqpbko" method="POST" onsubmit="return showThankYouMessage(event)"
+    <form action="https://formspree.io/f/xqkrpjvw" method="POST" onsubmit="return showThankYouMessage(event)"
       <input type="text" name="name" placeholder="이름" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
       <input type="email" name="email" placeholder="이메일 주소" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;">
       <textarea name="message" placeholder="문의 내용을 입력해주세요" rows="5" required style="padding: 0.8rem; border: 1px solid #ccc; border-radius: 5px;"></textarea>
@@ -246,10 +246,10 @@
 </script>
 <script>
   // 환율 정보
-  fetch('https://v6.exchangerate-api.com/v6/0a5df2eb03dcf7e96fbd6353/latest/USD')
+  fetch('https://api.exchangerate.host/latest?base=USD&symbols=KRW')
     .then(response => response.json())
     .then(data => {
-      const rate = data.conversion_rates.KRW;
+      const rate = data.rates.KRW;
       document.getElementById("exchangeRate").textContent = rate.toFixed(2) + ' KRW';
     }).catch(() => {
       document.getElementById("exchangeRate").textContent = '정보를 불러올 수 없습니다';
