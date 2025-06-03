@@ -110,39 +110,29 @@
     .slider-dots .dot.active {
       color: #fff;
     }
+      .hero-video {
+      position: relative;
+      height: 80vh;
+      overflow: hidden;
+    }
+    .hero-video video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-video .overlay {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      color: #fff;
+      padding-top: 30vh;
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
   </style>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const hero = document.querySelector(".hero");
-  const images = [
-    'https://picsum.photos/id/1015/1600/900',
-    'https://picsum.photos/id/1025/1600/900',
-    'https://picsum.photos/id/1035/1600/900'
-  ];
-  let currentImage = 0;
 
-  const cycleImages = () => {
-    hero.style.transition = 'background-image 1s ease-in-out';
-    hero.style.backgroundImage = `url('${images[currentImage]}')`;
-    currentImage = (currentImage + 1) % images.length;
-  };
-
-  const dots = document.querySelectorAll('.dot');
-  function updateDots(index) {
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[index].classList.add('active');
-  }
-  const startSlider = () => {
-    cycleImages();
-    updateDots(currentImage);
-    setInterval(() => {
-      cycleImages();
-      updateDots(currentImage);
-    }, 3000);
-  };
-  startSlider();
-});
-</script>
 </head>
 <body>
   <nav>
@@ -157,14 +147,15 @@ document.addEventListener("DOMContentLoaded", function () {
     </div>
   </nav>
 
-  <div class="hero" id="home">
-  <h1>글로벌 해운항공 포워딩 전문 기업</h1>
-  <p>고객 중심의 스마트 물류 파트너</p>
-  <div class="slider-dots">
-    <span class="dot" data-index="0">*</span>
-    <span class="dot" data-index="1">*</span>
-    <span class="dot" data-index="2">*</span>
+  <div class="hero-video" id="home">
+  <video autoplay muted loop playsinline>
+    <source src="https://www.w3schools.com/howto/rain.mp4" type="video/mp4" />
+  </video>
+  <div class="overlay">
+    <h1>글로벌 해운항공 포워딩 전문 기업</h1>
+    <p>고객 중심의 스마트 물류 파트너</p>
   </div>
+</div>
 </div>
 
   <section id="about">
