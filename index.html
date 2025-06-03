@@ -18,11 +18,11 @@
       line-height: 1.6;
     }
     header {
-      background-color: #ffffff;
+      background: url('https://source.unsplash.com/1600x900/?container,logistics') center/cover no-repeat;
       padding: 2.5rem 1rem 1rem;
-      color: #1d1d1f;
+      color: white;
       text-align: center;
-      border-bottom: 1px solid #e5e5e5;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
     }
     header h1 {
       font-size: 2.8rem;
@@ -43,7 +43,7 @@
       font-size: 1rem;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1601852402224-e0eabf302f62?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      background: url('https://source.unsplash.com/1600x900/?freight,logistics') center/cover no-repeat;
       height: 60vh;
       display: flex;
       flex-direction: column;
@@ -51,8 +51,20 @@
       justify-content: center;
       text-align: center;
       padding: 2rem;
+      position: relative;
+      z-index: 0;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.5);
+      z-index: 1;
     }
     .hero h1 {
+      position: relative;
+      z-index: 2;
       font-size: 2.4rem;
       font-weight: 600;
       color: #1d1d1f;
@@ -89,7 +101,7 @@
 </head>
 <body>
   <header>
-    <div style="font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; color: #0071e3; margin-bottom: 0.5rem;">
+    <div style="font-size: 1.2rem; font-weight: 700; letter-spacing: 1px; color: #ffffff; margin-bottom: 0.5rem;">
       JASA | JEONGAN SEA &amp; AIR CO., LTD
     </div>
     <h1>(주)정안해운항공</h1>
@@ -100,16 +112,17 @@
     <a href="#services">서비스</a>
     <a href="#contact">문의하기</a>
   </nav>
-  <div class="hero" style="position: relative; z-index: 0; overflow: hidden;">
-  <div style="position:absolute; inset:0; background: rgba(255,255,255,0.5); z-index:1;"></div>
-  <h1 style="position: relative; z-index: 2;">고객 중심의 스마트 물류 파트너</h1>
-</div>
-  
-    
-    
-    <p><strong>사업자등록번호:</strong> 119-86-33395</p>
+  <div class="hero">
+    <h1>고객 중심의 스마트 물류 파트너</h1>
+  </div>
+  <section id="about">
+    <h2>회사소개</h2>
+    <p>(주)정안해운항공은 글로벌 네트워크를 기반으로 한 해운 및 항공 운송 전문 기업입니다. 고객의 니즈에 맞춘 맞춤형 물류 서비스를 통해 비용 효율성과 운송 안정성을 동시에 제공합니다.</p>
     <p><strong>산업 분야:</strong> 물류 · 운송 · 배송</p>
-    
+    <p><strong>설립일:</strong> 2010.09.13</p>
+    <p><strong>대표자:</strong> 김종필</p>
+    <p><strong>사업자등록번호:</strong> 119-86-33395</p>
+    <p><strong>주선인 부호:</strong> JASA</p>
   </section>
   <section id="services">
     <h2>주요 서비스</h2>
@@ -122,11 +135,18 @@
       <li>3PL 및 SCM 솔루션</li>
     </ul>
   </section>
-  <h2>물류비 견적 문의하기</h2>
-  <p>이메일: jpkim@jeongansna.com</p>
-  <p>전화: 02-837-2311</p>
-  <p>팩스: 02-837-2314</p>
-  <p>주소: 서울 금천구 가산디지털2로 14, 213호</p>
-  <div style="margin-top: 2rem">
-    <iframe src="https://map.naver.com/p/search/서울%20금천구%20가산디지털2로%2014%20213호" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-  </div>
+  <section id="contact">
+    <h2>물류비 견적 문의하기</h2>
+    <p>이메일: jpkim@jeongansna.com</p>
+    <p>전화: 02-837-2311</p>
+    <p>팩스: 02-837-2314</p>
+    <p>주소: 서울 금천구 가산디지털2로 14, 213호</p>
+    <div style="margin-top: 2rem">
+      <iframe src="https://map.naver.com/p/search/서울%20금천구%20가산디지털2로%2014%20213호" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </section>
+  <footer>
+    &copy; 2025 (주)정안해운항공. All rights reserved.
+  </footer>
+</body>
+</html>
