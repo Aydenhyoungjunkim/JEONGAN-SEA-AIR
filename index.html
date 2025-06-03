@@ -18,10 +18,27 @@
       line-height: 1.6;
     }
     header {
+      text-align: center;
+      padding: 2rem 1rem;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
+      font-weight: 700;
+      color: #1d1d1f;
+      margin-top: 0.5rem;
+      letter-spacing: -0.03em;
+    }
+    header .sub {
+      font-size: 1rem;
       font-weight: 600;
+      letter-spacing: 1.2px;
+      color: #0071e3;
+      text-transform: uppercase;
+    }
+    header .desc {
+      font-size: 1.2rem;
+      color: #6e6e73;
+      margin-top: 0.25rem;
     }
     nav {
       display: flex;
@@ -29,8 +46,7 @@
       gap: 2rem;
       background: #ffffff;
       padding: 1rem 0;
-      border-bottom: 1px solid #e5e5e
-      
+      border-bottom: 1px solid #e5e5e5;
     }
     nav a {
       text-decoration: none;
@@ -46,21 +62,17 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
       position: relative;
-      z-index: 0;
-      overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0,0,0,0.4);
-      z-index: 1;
+      background: rgba(0, 0, 0, 0.4);
     }
     .hero h1 {
       position: relative;
-      z-index: 2;
+      z-index: 1;
       font-size: 2.4rem;
       font-weight: 600;
       color: #ffffff;
@@ -96,41 +108,31 @@
   </style>
 </head>
 <body>
-  <header style="text-align: center; padding: 2rem 1rem; display: flex; flex-direction: column; align-items: center;">
-    <div style="font-size: 1rem; font-weight: 600; letter-spacing: 1.2px; color: #0071e3; text-transform: uppercase;">JASA | JEONGAN SEA &amp; AIR CO., LTD</div>
-  <h1 style="font-size: 3rem; font-weight: 700; color: #1d1d1f; margin-top: 0.5rem; letter-spacing: -0.03em;">(주)정안해운항공</h1>
-  <p style="font-size: 1.2rem; color: #6e6e73; margin-top: 0.25rem;">글로벌 해운항공 포워딩 전문 기업</p>
+  <header>
+    <div class="sub">JASA | JEONGAN SEA &amp; AIR CO., LTD</div>
+    <h1>(주)정안해운항공</h1>
+    <p class="desc">글로벌 해운항공 포워딩 전문 기업</p>
   </header>
-  <a href="#about">회사소개</a>
-<a href="#services">서비스</a>
-<a href="#clients">고객사</a>
-<a href="#contact">문의하기</a>
-<a href="#location">위치</a>
+
+  <nav>
+    <a href="#about">회사소개</a>
+    <a href="#services">서비스</a>
+    <a href="#clients">고객사</a>
+    <a href="#contact">문의하기</a>
+    <a href="#location">위치</a>
   </nav>
+
   <div class="hero">
     <h1>고객 중심의 스마트 물류 파트너</h1>
   </div>
+
   <section id="about">
     <h2>회사소개</h2>
-    <p style="font-size: 1.2rem; color: #1d1d1f; font-weight: 400; line-height: 1.8;">
-      (주)정안해운항공은 글로벌 물류 네트워크와 스마트 운송 솔루션을 통해,
-      고객 맞춤형 해운 및 항공 서비스를 제공합니다. 효율성과 안정성, 그리고
-      전문성을 바탕으로 더 빠르고 유연한 물류 경험을 만들어 갑니다.
-    </p>
-    
-  <section id="clients">
-    <h2>고객사</h2>
-    <p>정안해운항공은 다양한 산업군의 고객사와 함께하며, 신뢰를 기반으로 장기적인 파트너십을 유지하고 있습니다.</p>
-    <ul>
-      <li>대형 제조기업</li>
-      <li>글로벌 유통사</li>
-      <li>IT 및 전자기업</li>
-      <li>중소 수출입업체</li>
-    </ul>
+    <p>(주)정안해운항공은 글로벌 물류 네트워크와 스마트 운송 솔루션을 통해 고객 맞춤형 해운 및 항공 서비스를 제공합니다. 효율성과 안정성, 그리고 전문성을 바탕으로 더 빠르고 유연한 물류 경험을 만들어 갑니다.</p>
   </section>
 
-
-    <h2>주요 서비스</h2>
+  <section id="services">
+    <h2>서비스</h2>
     <p><strong>특화 서비스:</strong> 컨테이너(FCL) 운송</p>
     <ul>
       <li>국제 해상운송 (FCL / LCL)</li>
@@ -140,15 +142,24 @@
       <li>3PL 및 SCM 솔루션</li>
     </ul>
   </section>
+
+  <section id="clients">
+    <h2>고객사</h2>
+    <ul>
+      <li>대형 제조기업</li>
+      <li>글로벌 유통사</li>
+      <li>IT 및 전자기업</li>
+      <li>중소 수출입업체</li>
+    </ul>
+  </section>
+
   <section id="contact">
     <h2>문의하기</h2>
     <p>이메일: jpkim@jeongansna.com</p>
     <p>전화: 02-837-2311</p>
     <p>팩스: 02-837-2314</p>
-    <div style="margin-top: 2rem">
-      <iframe src="https://map.naver.com/p/search/서울%20금천구%20가산디지털2로%2014%20213호" width="100%" height="400" style="border:0;" allowfullscreen loading="lazy"></iframe>
-    </div>
-  $1
+  </section>
+
   <section id="location">
     <h2>위치</h2>
     <p>서울 금천구 가산디지털2로 14, 213호</p>
@@ -157,17 +168,14 @@
     </div>
   </section>
 
-<footer>
+  <footer>
     &copy; 2025 (주)정안해운항공. All rights reserved.
-  $1
-  <p><strong>주소:</strong> 서울 금천구 가산디지털2로 14, 213호</p>
-  <p><strong>산업 분야:</strong> 물류 · 운송 · 배송</p>
-  <p><strong>설립일:</strong> 2010.09.13</p>
-  <p><strong>대표자:</strong> 김종필</p>
-  <p><strong>사업자등록번호:</strong> 119-86-33395</p>
-  <p><strong>주선인 부호:</strong> JASA</p>
-</section>
-
-</footer>
+    <p><strong>주소:</strong> 서울 금천구 가산디지털2로 14, 213호</p>
+    <p><strong>산업 분야:</strong> 물류 · 운송 · 배송</p>
+    <p><strong>설립일:</strong> 2010.09.13</p>
+    <p><strong>대표자:</strong> 김종필</p>
+    <p><strong>사업자등록번호:</strong> 119-86-33395</p>
+    <p><strong>주선인 부호:</strong> JASA</p>
+  </footer>
 </body>
 </html>
