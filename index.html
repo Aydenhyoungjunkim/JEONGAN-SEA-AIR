@@ -13,12 +13,13 @@
     }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      background: linear-gradient(to bottom, #f5f7fa, #ffffff);
+      background: linear-gradient(to bottom, #f0f2f5, #ffffff);
       color: #1d1d1f;
       line-height: 1.6;
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
     header h1 {
       font-size: 3rem;
@@ -100,9 +101,11 @@
       margin: auto;
     }
     section h2 {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       margin-bottom: 1.5rem;
       color: #1d1d1f;
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
     section ul {
       list-style: none;
@@ -131,16 +134,16 @@
     <p class="desc">글로벌 해운항공 포워딩 전문 기업</p>
   </header>
 
-  <nav>
-    <a href="#about">회사소개</a>
-    <a href="#services">서비스</a>
-    <a href="#clients">고객사</a>
-    <a href="#contact">문의하기</a>
-    <a href="#location">위치</a>
-  </nav>
+  <nav style="display: flex; justify-content: center; gap: 2rem; background: #ffffffcc; padding: 1rem 0; border-bottom: 1px solid #e5e5e5; position: sticky; top: 0; backdrop-filter: blur(10px); z-index: 10;">
+  <a href="#about" style="text-decoration: none; color: #0071e3; font-weight: 500; font-size: 1rem;">회사소개</a>
+  <a href="#services" style="text-decoration: none; color: #0071e3; font-weight: 500; font-size: 1rem;">서비스</a>
+  <a href="#clients" style="text-decoration: none; color: #0071e3; font-weight: 500; font-size: 1rem;">고객사</a>
+  <a href="#contact" style="text-decoration: none; color: #0071e3; font-weight: 500; font-size: 1rem;">문의하기</a>
+  <a href="#location" style="text-decoration: none; color: #0071e3; font-weight: 500; font-size: 1rem;">위치</a>
+</nav>
 
-  <div class="hero" style="background: url('https://images.unsplash.com/photo-1529078155058-5d716f45d604?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center;">
-  <h1 style="color: #fff; font-size: 2.4rem; font-weight: 600; text-align: center; text-shadow: 0 0 10px rgba(0,0,0,0.5);">고객 중심의 스마트 물류 파트너</h1>
+  <div class="hero" style="background: url('https://images.unsplash.com/photo-1585128792020-94f6f7c6c134?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat; height: 60vh; display: flex; align-items: center; justify-content: center;">
+  <h1 style="color: #fff; font-size: 2.8rem; font-weight: 700; text-align: center; letter-spacing: -0.03em; text-shadow: 0 0 10px rgba(0,0,0,0.4);">고객 중심의 스마트 물류 파트너</h1>
 </div>
 
   <section id="about">
