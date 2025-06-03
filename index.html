@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>(주)정안해운항공 | 글로벌 해운항공 포워딩</title>
+  <title>(주)정안해운항공 | 스마트 물류 포워딩</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2d9a66d65.js" crossorigin="anonymous"></script>
   <style>
     * {
       box-sizing: border-box;
@@ -12,229 +13,186 @@
       padding: 0;
     }
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-      background: #f9f9f9;
-      color: #1f1f1f;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #1e1e1e;
+      scroll-behavior: smooth;
     }
-    nav {
+    header {
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      background-color: #ffffff;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
     }
-    nav .logo {
-      font-size: 1.5rem;
+    .logo {
+      font-size: 1.8rem;
       font-weight: 700;
-      color: #0071e3;
+      color: #0070f3;
     }
     nav a {
-      margin-left: 2rem;
+      margin-left: 1.5rem;
       text-decoration: none;
-      color: #1f1f1f;
+      color: #333;
       font-weight: 500;
-      transition: color 0.2s;
     }
     nav a:hover {
-      color: #0071e3;
+      color: #0070f3;
     }
     .hero {
+      background: url('https://picsum.photos/id/1050/1600/900') center/cover no-repeat;
+      height: 90vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: url('https://images.unsplash.com/photo-1557683304-673a23048d34?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      height: 80vh;
-      color: #fff;
+      flex-direction: column;
+      color: white;
       text-align: center;
-      padding: 0 2rem;
+      padding: 2rem;
     }
     .hero h1 {
       font-size: 3rem;
-      font-weight: 700;
-      text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      animation: fadeInUp 1s ease-out;
     }
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       margin-top: 1rem;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      animation: fadeInUp 1.4s ease-out;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     section {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 4rem auto;
-      padding: 0 2rem;
+      padding: 0 1.5rem;
     }
     section h2 {
       font-size: 2rem;
-      font-weight: 600;
+      margin-bottom: 1.5rem;
+      color: #0070f3;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    .service-card i {
+      font-size: 2.5rem;
+      color: #0070f3;
       margin-bottom: 1rem;
-      color: #0071e3;
-    }
-    section p, section ul {
-      font-size: 1rem;
-      color: #333;
-    }
-    section ul {
-      list-style: disc;
-      padding-left: 1.5rem;
     }
     footer {
       background: #202124;
       color: #ccc;
       text-align: center;
       padding: 2rem;
-      font-size: 0.9rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-      .slider-dots {
-      position: absolute;
-      bottom: 20px;
-      display: flex;
-      gap: 10px;
-    }
-    .slider-dots .dot {
-      font-size: 2rem;
-      cursor: pointer;
-      color: #ccc;
-    }
-    .slider-dots .dot.active {
-      color: #fff;
-    }
-      .hero-video {
-      position: relative;
-      height: 80vh;
-      overflow: hidden;
-    }
-    .hero-video video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .hero-video .overlay {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      color: #fff;
-      padding-top: 30vh;
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-      .typewriter-text {
-      overflow: hidden;
-      border-right: .15em solid #fff;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .1em;
-      animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: white; }
     }
   </style>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #111;
+      color: #eee;
+    }
+    header, .service-card {
+      background: #1c1c1c;
+    }
+    nav a {
+      color: #eee;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    .hero {
+      background-blend-mode: overlay;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+    .logo {
+      font-size: 1.5rem;
+    }
+    .hero h1 {
+      font-size: 2rem;
+    }
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
 </head>
 <body>
-  <nav>
+  <header>
     <div class="logo">정안해운항공</div>
-    <div>
+    <nav>
       <a href="#home">홈</a>
       <a href="#about">회사소개</a>
       <a href="#services">서비스</a>
       <a href="#clients">고객사</a>
       <a href="#contact">문의하기</a>
       <a href="#location">위치</a>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
-  <div class="hero-video" id="home">
-  <video autoplay muted loop playsinline poster="https://picsum.photos/id/1039/1600/900">
-    <source src="" type="video/mp4"
-  </video>
-  <div class="overlay">
-    <h1 class="typewriter-text">글로벌 해운항공 포워딩 전문 기업</h1>
-    <p>고객 중심의 스마트 물류 파트너</p>
-  </div>
-</div>
-</div>
+  <section class="hero" id="home">
+    <h1>스마트 글로벌 물류 파트너</h1>
+    <p>해운·항공 운송의 미래를 연결합니다</p>
+  </section>
 
   <section id="about">
     <h2>회사소개</h2>
-    <p>(주)정안해운항공은 글로벌 네트워크를 기반으로 한 해운 및 항공 운송 전문 기업입니다. 고객의 니즈에 맞춘 맞춤형 물류 서비스를 통해 비용 효율성과 운송 안정성을 동시에 제공합니다.</p>
-    <div class="grid">
-      <div>
-        <h3>설립일</h3>
-        <p>2010.09.13</p>
-      </div>
-      <div>
-        <h3>대표자</h3>
-        <p>김종필</p>
-      </div>
-      <div>
-        <h3>산업 분야</h3>
-        <p>물류 · 운송 · 배송</p>
-      </div>
-      <div>
-        <h3>사업자등록번호</h3>
-        <p>119-86-33395</p>
-      </div>
-      <div>
-        <h3>주선인 부호</h3>
-        <p>JASA</p>
-      </div>
-    </div>
+    <p>(주)정안해운항공은 글로벌 네트워크 기반의 해운 및 항공 운송 전문 기업으로, 고객 맞춤형 물류 서비스를 통해 비용 효율성과 운송 안정성을 제공합니다.</p>
   </section>
 
   <section id="services">
-  <h2>서비스</h2>
-  <div class="grid">
-    <div>
-      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6a2.svg" alt="선박 아이콘" width="40" height="40" />
-      <p>국제 해상운송 (FCL / LCL)</p>
+    <h2>서비스</h2>
+    <div class="grid">
+      <div class="service-card">
+        <i class="fas fa-ship"></i>
+        <p>국제 해상운송 (FCL / LCL)</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-plane"></i>
+        <p>국제 항공운송</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-warehouse"></i>
+        <p>창고 운영 및 보관</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-truck-loading"></i>
+        <p>수출입 통관 서비스</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-globe"></i>
+        <p>SCM / 3PL 물류 솔루션</p>
+      </div>
     </div>
-    <div>
-      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2708.svg" alt="비행기 아이콘" width="40" height="40" />
-      <p>국제 항공운송</p>
-    </div>
-    <div>
-      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f6d2.svg" alt="카트 아이콘" width="40" height="40" />
-      <p>수출입 통관 서비스</p>
-    </div>
-    <div>
-      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4e6.svg" alt="박스 아이콘" width="40" height="40" />
-      <p>보세창고 및 일반창고 운영</p>
-    </div>
-    <div>
-      <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f310.svg" alt="지구 아이콘" width="40" height="40" />
-      <p>3PL 및 SCM 솔루션</p>
-    </div>
-  </div>
-</section>
+  </section>
 
   <section id="clients">
     <h2>고객사</h2>
     <ul>
       <li>CJ대한통운</li>
       <li>삼해상사</li>
-      <li>다수의 중견 제조사 및 수출입기업</li>
+      <li>다수의 수출입 제조기업</li>
     </ul>
   </section>
 
@@ -251,47 +209,12 @@
     <iframe src="https://map.naver.com/p/search/서울%20금천구%20가산디지털2로%2014%20213호" width="100%" height="400" style="border:0; margin-top: 1rem;" allowfullscreen loading="lazy"></iframe>
   </section>
 
-  <section id="realtime-info">
-    <h2>실시간 정보</h2>
-    <div class="grid">
-      <div>
-        <h3>환율 정보 (USD/KRW)</h3>
-        <p id="exchange-rate">불러오는 중...</p>
-      </div>
-      <div>
-        <h3>시간 정보</h3>
-        <p>뉴욕: <span id="time-ny">--:--</span></p>
-        <p>런던: <span id="time-london">--:--</span></p>
-        <p>서울: <span id="time-seoul">--:--</span></p>
-      </div>
-    </div>
-  </section>
-
   <footer>
     &copy; 2025 (주)정안해운항공. All rights reserved.
   </footer>
 <script>
-  // 실시간 시간 정보 업데이트
-  function updateTime() {
-    const options = { hour: '2-digit', minute: '2-digit', hour12: false };
-    const now = new Date();
-    document.getElementById('time-ny').textContent = now.toLocaleTimeString('en-US', { ...options, timeZone: 'America/New_York' });
-    document.getElementById('time-london').textContent = now.toLocaleTimeString('en-GB', { ...options, timeZone: 'Europe/London' });
-    document.getElementById('time-seoul').textContent = now.toLocaleTimeString('ko-KR', { ...options, timeZone: 'Asia/Seoul' });
-  }
-  setInterval(updateTime, 1000);
-  updateTime();
-
-  // 환율 정보 (USD → KRW) API 사용
-  fetch('https://api.exchangerate.host/latest?base=USD&symbols=KRW')
-    .then(res => res.json())
-    .then(data => {
-      const rate = data.rates.KRW;
-      document.getElementById('exchange-rate').textContent = rate.toFixed(2) + ' KRW';
-    })
-    .catch(() => {
-      document.getElementById('exchange-rate').textContent = '불러올 수 없음';
-    });
+  gsap.from(".hero h1", { y: 50, opacity: 0, duration: 1, ease: "power3.out" });
+  gsap.from(".hero p", { y: 50, opacity: 0, delay: 0.3, duration: 1, ease: "power3.out" });
 </script>
 </body>
 </html>
