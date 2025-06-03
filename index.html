@@ -1,100 +1,129 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OO로지스틱스 | 해운항공 포워딩 전문</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>정안로지스틱스 | 글로벌 해운항공 포워딩</title>
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      background-color: #f8f9fa;
-      color: #333;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background-color: #ffffff;
+      color: #1d1d1f;
+      line-height: 1.6;
     }
     header {
-      background-color: #00548f;
-      color: white;
-      padding: 20px;
+      background-color: #ffffff;
+      padding: 2.5rem 1rem 1rem;
+      color: #1d1d1f;
       text-align: center;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 600;
     }
     nav {
-      background-color: #003d6a;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      padding: 10px 0;
+      gap: 2rem;
+      background: #ffffff;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e5e5e5;
     }
     nav a {
-      color: white;
       text-decoration: none;
-      font-weight: bold;
+      color: #0071e3;
+      font-weight: 500;
+      font-size: 1rem;
     }
     .hero {
-      background: url('https://images.unsplash.com/photo-1585043951320-c7e8d9fcf5b0?auto=format&fit=crop&w=1350&q=80') center/cover;
-      height: 400px;
+      background: #f5f5f7;
+      height: 60vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: white;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-      font-size: 2rem;
+      text-align: center;
+      padding: 2rem;
     }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
       margin: auto;
     }
-    .section h2 {
-      color: #00548f;
-      margin-bottom: 20px;
+    section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 1.5rem;
+      color: #1d1d1f;
     }
-    .footer {
-      background-color: #333;
-      color: white;
+    section ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    section ul li::before {
+      content: '\2022';
+      margin-right: 0.6rem;
+      color: #0071e3;
+      font-size: 1.2rem;
+      vertical-align: middle;
+    }
+    footer {
+      background: #f5f5f7;
+      color: #6e6e73;
       text-align: center;
-      padding: 20px;
+      padding: 2rem;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>OO로지스틱스</h1>
-    <p>해운 & 항공 전문 국제물류 포워딩 기업</p>
+    <h1>정안로지스틱스</h1>
+    <p>글로벌 해운항공 포워딩 전문 기업</p>
   </header>
   <nav>
     <a href="#about">회사소개</a>
-    <a href="#service">서비스</a>
+    <a href="#services">서비스</a>
     <a href="#contact">문의하기</a>
   </nav>
   <div class="hero">
-    글로벌 물류, 신속하고 안전하게
+    <h1>고객 중심의 스마트 물류 파트너</h1>
   </div>
-  <section class="section" id="about">
+  <section id="about">
     <h2>회사소개</h2>
     <p>
-      OO로지스틱스는 전 세계 해상 및 항공 운송 서비스를 제공하는 국제물류 전문 기업입니다. 다양한 산업군의 고객에게 최적의 물류 솔루션을 제공하며, 효율성과 안정성을 바탕으로 신뢰를 얻고 있습니다.
+      정안로지스틱스는 글로벌 네트워크를 기반으로 한 해운 및 항공 운송 전문 기업입니다. 고객의 니즈에 맞춘 맞춤형 물류 서비스를 통해 비용 효율성과 운송 안정성을 동시에 제공합니다.
     </p>
   </section>
-  <section class="section" id="service">
-    <h2>서비스</h2>
+  <section id="services">
+    <h2>주요 서비스</h2>
     <ul>
-      <li>해운 운송 (FCL/LCL)</li>
-      <li>항공 운송</li>
-      <li>통관 및 창고 보관</li>
-      <li>특송 및 내륙 운송</li>
-      <li>3PL 서비스 및 SCM 컨설팅</li>
+      <li>국제 해상운송 (FCL / LCL)</li>
+      <li>국제 항공운송</li>
+      <li>수출입 통관 서비스</li>
+      <li>보세창고 및 일반창고 운영</li>
+      <li>3PL 및 SCM 솔루션</li>
     </ul>
   </section>
-  <section class="section" id="contact">
+  <section id="contact">
     <h2>문의하기</h2>
-    <p>이메일: info@oologistics.com</p>
+    <p>이메일: contact@jeonganlogi.com</p>
     <p>전화: 02-1234-5678</p>
-    <p>주소: 서울시 강남구 물류로 123</p>
+    <p>주소: 서울특별시 중구 무역로 21</p>
   </section>
-  <footer class="footer">
-    &copy; 2025 OO로지스틱스. All rights reserved.
+  <footer>
+    &copy; 2025 정안로지스틱스. All rights reserved.
   </footer>
 </body>
 </html>
